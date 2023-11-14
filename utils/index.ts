@@ -52,3 +52,16 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 }
+
+export const updateSearchParams = (type: string, value: string) => {
+  // 현재 URL의 검색 매개변수를 가져온다.
+  const searchParams = new URLSearchParams(window.location.search);
+
+  // 지정된 유형의 검색 매개변수를 주어진 값으로 설정
+  searchParams.set(type, value);
+
+  // 주어진 값으로 지정된 검색 매개변수를 설정
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathname;
+}
