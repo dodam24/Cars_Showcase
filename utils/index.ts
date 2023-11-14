@@ -1,6 +1,8 @@
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 
-export async function fetchCars() {
+export async function fetchCars(filters:FilterProps) {
+  const { manufacturer, year, model, limit, fuel } = filters;
+
   // API 요청에 필요한 헤더 설정
   const headers = {
     "X-RapidAPI-Key": "b76de68bdbmsha34f3e78395361dp1141dcjsnfd7beacb3720",
@@ -9,7 +11,7 @@ export async function fetchCars() {
 
   // API 요청 수행
   const response = await fetch(
-    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3",
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
     {
       headers: headers,
     }
