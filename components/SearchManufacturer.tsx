@@ -9,8 +9,8 @@ import { SearchManufacturerProps } from "@/types";  // SearchManufacturer 컴포
 
 // SearchManufacturer 컴포넌트 정의
 const SearchManufacturer = ({
-  manufacturer,
-  setManufacturer,
+  selected,
+  setSelected
 }: SearchManufacturerProps) => {
   const [query, setQuery] = useState(""); // 검색 쿼리 상태
 
@@ -28,19 +28,17 @@ const SearchManufacturer = ({
   // 컴포넌트 렌더링
   return (
     <div className="search-manufacturer">
-      <Combobox value={manufacturer} onChange={setManufacturer}>
+      <Combobox value={selected} onChange={setSelected}>
         <div className="relative w-full">
           {/* Combobox 버튼. 아이콘을 클릭하면 전체 드롭다운이 표시된다. */}
           <Combobox.Button
-            className="absolute top-
-        [14px]"
-          >
+            className="absolute top-[14px]">
             <Image
               src="/car-logo.svg"
               width={20}
               height={20}
               className="ml-4"
-              alt="Car Logo"
+              alt="car logo"
             />
           </Combobox.Button>
 
