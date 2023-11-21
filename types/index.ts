@@ -55,6 +55,7 @@ export interface OptionProps {
 export interface CustomFilterProps {
   title: string;
   options: OptionProps[];
+  setFilter: Dispatch<SetStateAction<string>>;
 }
 
 export interface ShowMoreProps {

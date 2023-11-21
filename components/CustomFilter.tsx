@@ -7,13 +7,15 @@ import { Listbox, Transition } from "@headlessui/react";
 import { CustomFilterProps } from "@/types";
 import { updateSearchParams } from "@/utils";
 
+import { Dispatch, SetStateAction } from "react";
+
 const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
 
   return (
     <div className="w-fit">
-      <Listbox 
-        value={selected} 
+      <Listbox
+        value={selected}
         onChange={(e) => {
           setSelected(e);
           setFilter(e.value);
@@ -47,8 +49,10 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
                   ${active ? "bg-primary-blue text-white" : "text-gray-900"}`}
                 >
                   {({ selected }) => (
-                    <span className={`block truncate 
-                      ${selected ? 'font-medium' : 'font-normal'}`}>
+                    <span
+                      className={`block truncate 
+                      ${selected ? "font-medium" : "font-normal"}`}
+                    >
                       {option.title}
                     </span>
                   )}
