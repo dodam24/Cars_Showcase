@@ -18,19 +18,18 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = ({ setManufacturer, setModel }: SearchBarProps ) => {
-  const [searchManufacturer, setSearchManufacturer] = useState("");
+const SearchBar = ({ setManuFacturer, setModel }: SearchBarProps) => {
   const [searchModel, setSearchModel] = useState("");
+  const [searchManufacturer, setSearchManufacturer] = useState("");
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (searchManufacturer === "" && searchModel === "") {
+    if (searchManufacturer.trim() === "" && searchModel.trim() === "")
       return alert("Please provide some input");
-    }
 
-    setModel(searchModel), 
-    setManufacturer(searchManufacturer);
+    setModel(searchModel);
+    setManuFacturer(searchManufacturer);
   };
 
   return (
