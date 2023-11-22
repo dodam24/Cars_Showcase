@@ -9,7 +9,7 @@ import { fuels, yearsOfProduction } from "@/constants";
 import { CarState } from "@types";
 
 export default function Home() {
-  const [allCars, setAllCars] = useState([]);
+  const [allCars, setAllCars] = useState<CarState>([]);
   const [loading, setLoading] = useState(false);
 
   // search states
@@ -37,18 +37,15 @@ export default function Home() {
 
       setAllCars(result);
     } catch {
-      console.error;
+      console.error();
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    console.log(fuel, year);
     getCars();
   }, [fuel, year, limit, manufacturer, model]);
-
-  // const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
     <main className="overflow-hidden">
@@ -75,8 +72,8 @@ export default function Home() {
         {allCars.length > 0 ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
-                <CarCard car={car} />
+              {allCars?.map((car, index) => (
+                <CarCard key={`car-${index}`} car={car} />
               ))}
             </div>
 

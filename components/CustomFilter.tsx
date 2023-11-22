@@ -2,12 +2,9 @@
 
 import { Fragment, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { Listbox, Transition } from "@headlessui/react";
-import { CustomFilterProps } from "@/types";
-import { updateSearchParams } from "@/utils";
 
-import { Dispatch, SetStateAction } from "react";
+import { CustomFilterProps } from "@/types";
 
 const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
@@ -49,12 +46,14 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
                   ${active ? "bg-primary-blue text-white" : "text-gray-900"}`}
                 >
                   {({ selected }) => (
-                    <span
-                      className={`block truncate 
-                      ${selected ? "font-medium" : "font-normal"}`}
-                    >
-                      {option.title}
-                    </span>
+                    <>
+                      <span
+                        className={`block truncate 
+                        ${selected ? "font-medium" : "font-normal"}`}
+                      >
+                        {option.title}
+                      </span>
+                    </>
                   )}
                 </Listbox.Option>
               ))}
