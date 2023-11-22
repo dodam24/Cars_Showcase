@@ -17,8 +17,8 @@ export interface CarProps {
 
 export type CarState = CarProps[] & { message?: string };
 
-export interface SearchBarPoprs {
-  setManufacturer: (manufacturer: string) => void;
+export interface SearchBarProps {
+  setManuFacturer: (manufacturer: string) => void;
   setModel: (model: string) => void;
 }
 
@@ -28,10 +28,6 @@ export interface FilterProps {
   model?: string;
   limit?: number;
   fuel?: string;
-}
-
-export interface HomeProps {
-  searchParams: FilterProps;
 }
 
 export interface CarCardProps {
