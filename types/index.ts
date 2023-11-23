@@ -50,13 +50,13 @@ export interface CustomButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export interface OptionProps {
+export interface OptionProps<T> {
   title: string;
-  value: string;
+  value: T;
 }
 
 export interface CustomFilterProps<T> {
-  options: OptionProps[];
+  options: OptionProps<T>[];
   setFilter: (selected: T) => void;
 }
 
