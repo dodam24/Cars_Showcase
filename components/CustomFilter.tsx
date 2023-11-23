@@ -6,23 +6,26 @@ import { Listbox, Transition } from "@headlessui/react";
 
 import { CustomFilterProps } from "@/types";
 
-const CustomFilter = ({ options, setFilter }: CustomFilterProps<T>) => {
+export default function CustomFilter<T>({ 
+  options, 
+  setFilter
+}: CustomFilterProps<T>) {
   // 선택된 옵션을 관리하는 상태 변수 및 설정 함수
-  const [selected, setSelected] = useState(options[0]);
+  const [menu, setMenu] = useState(options[0]);
 
   return (
     <div className="w-fit">
       <Listbox
-        value={selected}
+        value={menu}
         onChange={(e) => {
           // 옵션 변경 시, 선택된 상태 업데이트 및 setFilter 함수 호출
-          setSelected(e);
-          setFilter(e.value);
+          setMenu(e);
+          setFilter(e.value as unknown as T);
         }}
       >
         <div className="relative w-fit z-10">
           <Listbox.Button className="custom-filter__btn">
-            <span className="block truncate">{selected.title}</span>
+            <span className="block truncate">{menu.title}</span>
             <Image
               src="/chevron-up-down.svg"
               width={20}
@@ -71,5 +74,3 @@ const CustomFilter = ({ options, setFilter }: CustomFilterProps<T>) => {
     </div>
   );
 };
-
-export default CustomFilter;
