@@ -5,8 +5,10 @@ import CustomButton from "./CustomButton";
 
 const Hero = () => {
   const handleScroll = () => {
+    // "discover"라는 ID를 가진 요소를 찾아서 nextSection에 할당
     const nextSection = document.getElementById("discover");
 
+    // nextSection이 존재하면 스크롤 효과로 해당 섹션으로 이동
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -16,12 +18,11 @@ const Hero = () => {
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">
-          Find, book, or rent a car -- quickly and easily!
+          빠르고 쉽게 자동차를 찾고, 예약하고, 렌트하세요!
         </h1>
 
         <p className="hero__subtitle">
-          Streamline your car rental experience with our effortless booking
-          process.
+          간편한 예약 프로세스로 자동차 렌트를 진행하세요.
         </p>
 
         <CustomButton

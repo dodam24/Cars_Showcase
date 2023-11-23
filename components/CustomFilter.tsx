@@ -6,7 +6,8 @@ import { Listbox, Transition } from "@headlessui/react";
 
 import { CustomFilterProps } from "@/types";
 
-const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
+const CustomFilter = ({ options, setFilter }: CustomFilterProps<T>) => {
+  // 선택된 옵션을 관리하는 상태 변수 및 설정 함수
   const [selected, setSelected] = useState(options[0]);
 
   return (
@@ -14,6 +15,7 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
       <Listbox
         value={selected}
         onChange={(e) => {
+          // 옵션 변경 시, 선택된 상태 업데이트 및 setFilter 함수 호출
           setSelected(e);
           setFilter(e.value);
         }}
@@ -29,17 +31,21 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
               alt="chevron up down"
             />
           </Listbox.Button>
+
+          {/* Listbox가 열릴 때, 트랜지션 효과를 주기 위한 Transition 컴포넌트 */}
           <Transition
             as={Fragment}
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
+            {/* Listbox의 옵션 부분 */}
             <Listbox.Options className="custom-filter__options">
               {options.map((option) => (
                 <Listbox.Option
                   key={option.title}
                   value={option}
+                  // 옵션의 활성화 여부에 따라 스타일을 동적으로 설정
                   className={({
                     active,
                   }) => `relative cursor-default select-none py-2 px-4 
@@ -47,6 +53,7 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
                 >
                   {({ selected }) => (
                     <>
+                      {/* 옵션의 title을 표시 */}
                       <span
                         className={`block truncate 
                         ${selected ? "font-medium" : "font-normal"}`}

@@ -14,7 +14,7 @@ const SearchManufacturer = ({
 }: SearchManufacturerProps) => {
   const [query, setQuery] = useState(""); // 검색 쿼리 상태
 
-  // 검색된 제조사 목록 필터링
+  // 검색된 제조사 목록을 필터링
   const filteredManufacturers =
     query === ""
       ? manufacturers
@@ -30,7 +30,7 @@ const SearchManufacturer = ({
     <div className="search-manufacturer">
       <Combobox value={selected} onChange={setSelected}>
         <div className="relative w-full">
-          {/* Combobox 버튼. 아이콘을 클릭하면 전체 드롭다운이 표시된다. */}
+          {/* Combobox 버튼. 아이콘을 클릭하면 전체 드롭다운 표시 */}
           <Combobox.Button
             className="absolute top-[14px]">
             <Image
@@ -45,7 +45,7 @@ const SearchManufacturer = ({
           {/* 검색을 위한 입력 필드 */}
           <Combobox.Input
             className="search-manufacturer__input"
-            placeholder="Volkswagen"
+            placeholder="Hyundai"
             displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => setQuery(e.target.value)}  // 입력이 변경될 때 검색 쿼리를 업데이트 한다.
           />
@@ -76,7 +76,7 @@ const SearchManufacturer = ({
                         {item}
                       </span>
                       
-                      {/* 옵션이 선택된 경우, 활성 상태에 따라 파란색 배경을 표시 /*/}
+                      {/* 옵션이 선택된 경우, 활성 상태에 따라 파란색 배경을 표시 */}
                       {selected ? (
                         <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active? "text-white": "text-pribg-primary-purple"}`}
                         ></span>
