@@ -1,4 +1,11 @@
-<img alt="메인 페이지" src="https://github.com/dodam24/nextjs-project-carhub/assets/121652059/89c40cb1-a08b-49cd-ae76-c7d82d8bb1ea">
+### 메인 페이지
+<img src="https://github.com/dodam24/nextjs-project-carhub/assets/121652059/89c40cb1-a08b-49cd-ae76-c7d82d8bb1ea">
+
+### 자동차 카탈로그
+<img src="https://github.com/dodam24/cars_showcase/assets/121652059/b689d15a-5ab5-442a-b9fd-741c1c6a9790">
+
+### 모달 창 (Car Details)
+<img src="https://github.com/dodam24/cars_showcase/assets/121652059/25eefd22-6ddf-45a2-a5ed-09695b67f6f3">
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
