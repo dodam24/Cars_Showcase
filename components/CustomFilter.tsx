@@ -42,7 +42,7 @@ export default function CustomFilter<T>({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            {/* 리스트 박스( 목록) 옵션 부분 */}
+            {/* 리스트 박스(=제조 업체) 옵션 부분 */}
             <Listbox.Options className="custom-filter__options">
               {options.map((option) => (
                 <Listbox.Option
