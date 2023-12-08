@@ -1,5 +1,7 @@
 import { CarProps, FilterProps } from "@/types";
 
+// 자동차 정보 검색 
+// (외부 API에 비동기적으로 요청을 보내서 관련된 필터를 매개변수로 받아 API로부터 자동차 정보를 가져온다.)
 export async function fetchCars(filters:FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
 
@@ -23,6 +25,7 @@ export async function fetchCars(filters:FilterProps) {
   return result;
 }
 
+// 자동차 대여료를 계산
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // 일일 기본 렌탈 요금
   const mileageFactor = 0.1;  // 주행 거리 당 추가 요금 비율
@@ -38,6 +41,7 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   return rentalRatePerDay.toFixed(0);
 };
 
+// 이미지 URL 생성 (자동차 정보와 각도를 기반으로 계산)
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL('https://cdn.imagin.studio/getimage');
 
@@ -53,6 +57,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   return `${url}`;
 }
 
+// 현재 페이지의 URL에 대한 검색 매개변수를 업데이트
 export const updateSearchParams = (type: string, value: string) => {
   // 현재 URL의 검색 매개변수를 가져온다.
   const searchParams = new URLSearchParams(window.location.search);
