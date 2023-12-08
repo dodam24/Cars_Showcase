@@ -35,14 +35,14 @@ export default function CustomFilter<T>({
             />
           </Listbox.Button>
 
-          {/* Listbox가 열릴 때, 트랜지션 효과를 주기 위한 Transition 컴포넌트 */}
+          {/* Listbox가 열릴 때, 전환 효과를 주기 위한 Transition 컴포넌트 */}
           <Transition
             as={Fragment}
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            {/* Listbox의 옵션 부분 */}
+            {/* 리스트 박스( 목록) 옵션 부분 */}
             <Listbox.Options className="custom-filter__options">
               {options.map((option) => (
                 <Listbox.Option

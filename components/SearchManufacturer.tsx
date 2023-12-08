@@ -25,12 +25,11 @@ const SearchManufacturer = ({
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
 
-  // 컴포넌트 렌더링
   return (
     <div className="search-manufacturer">
       <Combobox value={selected} onChange={setSelected}>
         <div className="relative w-full">
-          {/* Combobox 버튼. 아이콘을 클릭하면 전체 드롭다운 표시 */}
+          {/* 콤보 박스 내의 아이콘을 클릭하면 전체 드롭다운을 표시 */}
           <Combobox.Button
             className="absolute top-[14px]">
             <Image
@@ -47,16 +46,16 @@ const SearchManufacturer = ({
             className="search-manufacturer__input"
             placeholder="Hyundai"
             displayValue={(manufacturer: string) => manufacturer}
-            onChange={(e) => setQuery(e.target.value)}  // 입력이 변경될 때 검색 쿼리를 업데이트 한다.
+            onChange={(e) => setQuery(e.target.value)}  // 입력이 변경될 때 검색 쿼리를 업데이트
           />
 
-          {/* 옵션을 표시하기 위한 Transition */}
+          {/* UI 요소가 화면에서 사라질 때, 해당 요소에 페이드 아웃 효과를 부여하고, 트랜지션이 완료된 후에 검색 쿼리를 초기화 */}
           <Transition
-            as={Fragment} // <></>를 사용하여 추가 DOM 노드를 도입하지 않고 여러 요소를 그룹화 한다.
+            as={Fragment} // <></>를 사용하여 추가 DOM 노드를 도입하지 않고 여러 요소를 그룹화
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-            afterLeave={() => setQuery("")} // Transition 완료 후, 검색 쿼리를 재설정
+            afterLeave={() => setQuery("")} // 완료 후, 검색 쿼리를 재설정
           >
             <Combobox.Options>
               {/* 필터링된 제조사 목록을 매핑하여 옵션을 생성 */}
