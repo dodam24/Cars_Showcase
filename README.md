@@ -1,13 +1,13 @@
-### 메인 페이지
+해당 프로젝트는 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)으로 시작된 [Next.js](https://nextjs.org/) 프로젝트입니다.
+
+## 메인 페이지 (Hero Section)
 <img src="https://github.com/dodam24/cars_showcase/assets/121652059/38c76005-d215-47dd-a4ae-9163634e94b0">
 
-### 자동차 카탈로그
+## 자동차 Card 컴포넌트
 <img src="https://github.com/dodam24/cars_showcase/assets/121652059/ea4a5d56-17fa-426c-b1b3-cb8cb7c140e9">
 
-### 모달 창 (Car Details)
+## 자동차 Modal 컴포넌트 (Car Details)
 <img src="https://github.com/dodam24/cars_showcase/assets/121652059/4095deec-ebab-414c-a708-d704df096076">
-
-해당 프로젝트는 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)으로 시작된 [Next.js](https://nextjs.org/) 프로젝트입니다.
 
 
 ## 시작하기
